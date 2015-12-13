@@ -1,17 +1,19 @@
 #!/usr/bin/python
 
-import sys
+import sys,os
 import numpy as np
 import pandas as pd
 import pickle
 from scipy.io import savemat
 from datetime import timedelta
-
+script_dir = os.path.dirname(__file__)
+print(script_dir+'/../../data/serie_viento.pickle')
 with open('serie_viento.pickle','r') as f:
 	#viento = pickle.load(f)
     viento = pd.read_pickle('serie_viento.pickle')
 
-vientoHorario=viento.asfreq('1h')
+#vientoHorario=viento.asfreq('1h')
+vientoHorario = viento
 
 wStart = int(sys.argv[1])
 wEnd = int(sys.argv[2])
@@ -55,4 +57,4 @@ for wSizeCount in range(wStart,wEnd+1):
     resultDict['k_'+str(wSizeCount)+'_outputs'] = outputs
 
 
-savemat('data_sameInstantOfDay'+'_wStart'+str(wStart)+'_wEnd'+str(wEnd)+'_h'+str(h),resultDict)
+savemat('minutal_data_sameInstantOfDay'+'_wStart'+str(wStart)+'_wEnd'+str(wEnd)+'_h'+str(h),resultDict)
