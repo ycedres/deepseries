@@ -28,8 +28,10 @@ net.trainParam.showWindow=0; %default is 1
 % Test the Network
 outputs = net(inputs);
 %errors = gsubtract(targets,outputs);
-%performance = perform(net,targets,outputs)
-performance_crossentropy = crossentropy(net,targets,outputs)
+performance = crossentropy(net,targets,outputs)
+%performance = mse(net,targets,outputs)
+%performance_mse = mse(net,targets,outputs)
+%performance_crossentropy = crossentropy(net,targets,outputs)
 
 % View the Network
 %view(net)

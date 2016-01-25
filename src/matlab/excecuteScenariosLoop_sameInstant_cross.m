@@ -43,7 +43,7 @@ for i = 1:size(fileNames,1)
     wSizeEnd = wSizeEnd + step;
     
 end
-save('ouput_mse.mat','table')
+save('ouput_cross.mat','table')
 %myvars = who;
 %for i=1:length(myvars)
 %    myfunction(eval(myvars(i)))

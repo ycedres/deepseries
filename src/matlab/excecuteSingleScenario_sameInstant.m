@@ -13,7 +13,7 @@ for i=wSizeStart:wSizeEnd
     outputs = eval(strcat('k_',int2str(i),'_outputs'));
     nn1;
     y=net(inputs);
-    %performanceArray_mse(i)=performance;
+    performanceArray_mse(i)=performance_mse;
     %performanceArray_crossentropy(i)= crossentropy(net,outputs,y);
     performanceArray_crossentropy(i)= performance_crossentropy;
     %save(strcat('resultados_consecutiveDays_',int2str(i)),'errors','hiddenLayerSize','net','performance','targets','tr')
