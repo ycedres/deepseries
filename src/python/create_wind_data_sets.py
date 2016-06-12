@@ -96,4 +96,5 @@ def generate_mat(wStart,wEnd,h):
 
 
 if __name__ == "__main__":
-    generate_mat(10,50,24)
+    #generate_mat(10,50,24)
+    generate_mat(10, 10, 24)
